@@ -24,7 +24,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "rupee_command",
-      "path": "~/Rupees"
+      "path": "~/Rupees/Commands"
     },
     {
       "name": "RupeeCountDisplay",
@@ -41,7 +41,7 @@
           }
         ]
       },
-      "path": "~/Rupees"
+      "path": "~/Rupees/Commands"
     },
     {
       "name": "RupeeCountAdd",
@@ -62,7 +62,7 @@
           }
         ]
       },
-      "path": "~/Rupees"
+      "path": "~/Rupees/Commands"
     },
     {
       "name": "RupeeCountRemove",
@@ -83,7 +83,7 @@
           }
         ]
       },
-      "path": "~/Rupees"
+      "path": "~/Rupees/Commands"
     },
     {
       "name": "RupeeGreen",
@@ -118,6 +118,22 @@
           {
             "name": "itemstack",
             "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -130,7 +146,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "rupee_cheat_command",
-      "path": "~/Rupees"
+      "path": "~/Rupees/Commands"
     },
     {
       "name": "RupeeOverlay",
@@ -182,6 +198,27 @@
         ]
       },
       "path": "~/Rupees"
+    },
+    {
+      "name": "RupeeCountSet",
+      "type": "procedure",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_count_set",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Rupees/Commands"
     }
   ],
   "variable_elements": [
@@ -192,10 +229,20 @@
       "value": "0"
     }
   ],
-  "sound_elements": [],
+  "sound_elements": [
+    {
+      "name": "get_rupee",
+      "files": [
+        "ww_get_rupee"
+      ],
+      "category": "neutral",
+      "subtitle": "Collect a rupee."
+    }
+  ],
   "language_map": {
     "en_us": {
       "itemGroup.tabzelda_tab": "Zelda Tab",
+      "subtitles.get_rupee": "Collect a rupee.",
       "item.zelda_mod.rupee_green": "Green Rupee"
     }
   },
@@ -204,7 +251,12 @@
     "children": [
       {
         "name": "Rupees",
-        "children": []
+        "children": [
+          {
+            "name": "Commands",
+            "children": []
+          }
+        ]
       }
     ]
   },

@@ -18,6 +18,6 @@ public class RupeeGreenItem extends Item {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		RupeeAddGreenRupeeProcedure.execute(entity, itemstack);
+		RupeeAddGreenRupeeProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity, itemstack);
 	}
 }

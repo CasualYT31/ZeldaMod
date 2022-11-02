@@ -1,0 +1,12 @@
+{
+  "get_rupee": {
+    "category": "neutral",
+    "subtitle": "subtitles.get_rupee",
+    "sounds": [
+      {
+        "name": "zelda_mod:ww_get_rupee",
+        "stream": false
+      }
+    ]
+  }
+}
