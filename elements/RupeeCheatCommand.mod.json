@@ -1,0 +1,9 @@
+{
+  "_fv": 33,
+  "_type": "command",
+  "definition": {
+    "commandName": "rupees",
+    "permissionLevel": "1",
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"302\" y=\"92\"><next><block type=\"literal\"><field name=\"name\">add</field><statement name=\"args\"><block type=\"number_min\"><field name=\"name\">rupees</field><field name=\"min\">0</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">RupeeCountAdd</field></block></statement></block></statement><next><block type=\"literal\"><field name=\"name\">remove</field><statement name=\"args\"><block type=\"number_min\"><field name=\"name\">rupees</field><field name=\"min\">0</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">RupeeCountRemove</field></block></statement></block></statement></block></next></block></next></block></xml>"
+  }
+}

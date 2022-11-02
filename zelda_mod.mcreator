@@ -84,6 +84,104 @@
         ]
       },
       "path": "~/Rupees"
+    },
+    {
+      "name": "RupeeGreen",
+      "type": "item",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_green",
+      "path": "~/Rupees"
+    },
+    {
+      "name": "ZeldaTab",
+      "type": "tab",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zelda_tab"
+    },
+    {
+      "name": "RupeeAddGreenRupee",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_add_green_rupee",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Rupees"
+    },
+    {
+      "name": "RupeeCheatCommand",
+      "type": "command",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_cheat_command",
+      "path": "~/Rupees"
+    },
+    {
+      "name": "RupeeOverlay",
+      "type": "overlay",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_overlay",
+      "path": "~/Rupees"
+    },
+    {
+      "name": "RupeeLootTable",
+      "type": "loottable",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_loot_table",
+      "path": "~/Rupees"
+    },
+    {
+      "name": "RupeeEntityDrops",
+      "type": "procedure",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_entity_drops",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Rupees"
     }
   ],
   "variable_elements": [
@@ -96,7 +194,10 @@
   ],
   "sound_elements": [],
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "itemGroup.tabzelda_tab": "Zelda Tab",
+      "item.zelda_mod.rupee_green": "Green Rupee"
+    }
   },
   "foldersRoot": {
     "name": "~",

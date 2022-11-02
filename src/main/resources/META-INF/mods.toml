@@ -8,7 +8,7 @@ version="1.0.0"
 displayName="Zelda Mod"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
-authors="Daniel, MCreator"
+authors="Casual, MCreator"
 
 [[dependencies.zelda_mod]]
     modId="minecraft"
