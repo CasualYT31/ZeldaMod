@@ -1,5 +1,10 @@
 # Zelda Mod
 
+## Devs
+
+ - CasualYT31: coding.
+ - LinkFromDaPast: art assets.
+
 ## Commit Gitmoji
 
 I like the idea of Gitmoji, but I find that there are a lot of emoji for the same thing, and some that are missing, in my opinion. So I decided to use my own emoji:
@@ -17,12 +22,6 @@ I like the idea of Gitmoji, but I find that there are a lot of emoji for the sam
 | | :fire: | fire | Remove code, tests, or files. |
 | | :warning: | warning | Fix code causing compiler warnings. |
 | | :no_entry: | no_entry | Fix code causing compiler errors. |
-
-| Testing | Emoji | Name | Meaning |
-| --- | ---: | :---: | :--- |
-| | :white_check_mark: | white_check_mark | Add passing test. |
-| | :x: | x | Add failing test. |
-| | :test_tube: | test_tube | Write tests that have not yet been run. |
 
 | Documentation | Emoji | Name | Meaning |
 | --- | ---: | :---: | :--- |
