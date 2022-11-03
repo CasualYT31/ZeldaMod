@@ -1,7 +1,24 @@
 {
-  "get_rupee": {
+  "get_blue_rupee": {
     "category": "neutral",
-    "subtitle": "subtitles.get_rupee",
+    "sounds": [
+      {
+        "name": "zelda_mod:ww_get_rupee_blue",
+        "stream": false
+      }
+    ]
+  },
+  "get_red_rupee": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "zelda_mod:ww_get_rupee_red",
+        "stream": false
+      }
+    ]
+  },
+  "get_green_rupee": {
+    "category": "neutral",
     "sounds": [
       {
         "name": "zelda_mod:ww_get_rupee",

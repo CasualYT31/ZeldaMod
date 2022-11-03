@@ -3,10 +3,10 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "rupee",
+    "texture": "redrupee",
     "customModelName": "Normal",
-    "name": "Green Rupee",
-    "rarity": "COMMON",
+    "name": "Red Rupee",
+    "rarity": "UNCOMMON",
     "creativeTab": {
       "value": "CUSTOM:ZeldaTab"
     },

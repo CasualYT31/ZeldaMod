@@ -103,43 +103,6 @@
       "registry_name": "zelda_tab"
     },
     {
-      "name": "RupeeAddGreenRupee",
-      "type": "procedure",
-      "sortid": 8,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "rupee_add_green_rupee",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Rupees"
-    },
-    {
       "name": "RupeeCheatCommand",
       "type": "command",
       "sortid": 9,
@@ -219,6 +182,79 @@
         ]
       },
       "path": "~/Rupees/Commands"
+    },
+    {
+      "name": "RupeeAddRupeeStack",
+      "type": "procedure",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_add_rupee_stack",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Rupees"
+    },
+    {
+      "name": "RupeeLootTableRare",
+      "type": "loottable",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_loot_table_rare",
+      "path": "~/Rupees"
+    },
+    {
+      "name": "RupeeLootTableFriendly",
+      "type": "loottable",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_loot_table_friendly",
+      "path": "~/Rupees"
+    },
+    {
+      "name": "RupeeBlue",
+      "type": "item",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_blue",
+      "path": "~/Rupees"
+    },
+    {
+      "name": "RupeeRed",
+      "type": "item",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_red",
+      "path": "~/Rupees"
     }
   ],
   "variable_elements": [
@@ -231,18 +267,39 @@
   ],
   "sound_elements": [
     {
-      "name": "get_rupee",
+      "name": "get_blue_rupee",
+      "files": [
+        "ww_get_rupee_blue"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "get_red_rupee",
+      "files": [
+        "ww_get_rupee_red"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "get_green_rupee",
       "files": [
         "ww_get_rupee"
       ],
       "category": "neutral",
-      "subtitle": "Collect a rupee."
+      "subtitle": ""
     }
   ],
   "language_map": {
     "en_us": {
+      "item.zelda_mod.rupee_blue": "Blue Rupee",
+      "item.zelda_mod.rupee_red": "Red Rupee",
       "itemGroup.tabzelda_tab": "Zelda Tab",
+      "subtitles.get_blue_rupee": "",
+      "subtitles.get_green_rupee": "",
       "subtitles.get_rupee": "Collect a rupee.",
+      "subtitles.get_red_rupee": "",
       "item.zelda_mod.rupee_green": "Green Rupee"
     }
   },

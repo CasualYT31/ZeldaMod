@@ -10,9 +10,9 @@ import net.minecraft.world.entity.Entity;
 import net.mcreator.zeldamod.procedures.RupeeAddRupeeStackProcedure;
 import net.mcreator.zeldamod.init.ZeldaModModTabs;
 
-public class RupeeGreenItem extends Item {
-	public RupeeGreenItem() {
-		super(new Item.Properties().tab(ZeldaModModTabs.TAB_ZELDA_TAB).stacksTo(64).rarity(Rarity.COMMON));
+public class RupeeBlueItem extends Item {
+	public RupeeBlueItem() {
+		super(new Item.Properties().tab(ZeldaModModTabs.TAB_ZELDA_TAB).stacksTo(64).rarity(Rarity.RARE));
 	}
 
 	@Override

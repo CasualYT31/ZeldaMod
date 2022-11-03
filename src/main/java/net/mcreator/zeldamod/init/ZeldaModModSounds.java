@@ -18,7 +18,9 @@ import java.util.HashMap;
 public class ZeldaModModSounds {
 	public static Map<ResourceLocation, SoundEvent> REGISTRY = new HashMap<>();
 	static {
-		REGISTRY.put(new ResourceLocation("zelda_mod", "get_rupee"), new SoundEvent(new ResourceLocation("zelda_mod", "get_rupee")));
+		REGISTRY.put(new ResourceLocation("zelda_mod", "get_blue_rupee"), new SoundEvent(new ResourceLocation("zelda_mod", "get_blue_rupee")));
+		REGISTRY.put(new ResourceLocation("zelda_mod", "get_red_rupee"), new SoundEvent(new ResourceLocation("zelda_mod", "get_red_rupee")));
+		REGISTRY.put(new ResourceLocation("zelda_mod", "get_green_rupee"), new SoundEvent(new ResourceLocation("zelda_mod", "get_green_rupee")));
 	}
 
 	@SubscribeEvent

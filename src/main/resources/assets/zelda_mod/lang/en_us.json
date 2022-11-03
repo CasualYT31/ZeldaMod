@@ -1,5 +1,10 @@
 {
+  "item.zelda_mod.rupee_blue": "Blue Rupee",
+  "item.zelda_mod.rupee_red": "Red Rupee",
   "itemGroup.tabzelda_tab": "Zelda Tab",
+  "subtitles.get_blue_rupee": "",
+  "subtitles.get_green_rupee": "",
   "subtitles.get_rupee": "Collect a rupee.",
+  "subtitles.get_red_rupee": "",
   "item.zelda_mod.rupee_green": "Green Rupee"
 }
