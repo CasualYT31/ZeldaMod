@@ -255,6 +255,35 @@
       "locked_code": false,
       "registry_name": "rupee_red",
       "path": "~/Rupees"
+    },
+    {
+      "name": "RupeeBlockDrops",
+      "type": "procedure",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_block_drops",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Rupees"
     }
   ],
   "variable_elements": [
