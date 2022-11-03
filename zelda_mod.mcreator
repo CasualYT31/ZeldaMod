@@ -257,33 +257,67 @@
       "path": "~/Rupees"
     },
     {
-      "name": "RupeeBlockDrops",
-      "type": "procedure",
-      "sortid": 20,
+      "name": "RupeeLootTableTallGrass",
+      "type": "loottable",
+      "sortid": 21,
       "compiles": true,
-      "locked_code": false,
-      "registry_name": "rupee_block_drops",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Rupees"
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_tall_grass",
+      "path": "~/Rupees/Plant Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableGrass",
+      "type": "loottable",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_grass",
+      "path": "~/Rupees/Plant Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableDeadBush",
+      "type": "loottable",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_dead_bush",
+      "path": "~/Rupees/Plant Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableSeagrass",
+      "type": "loottable",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_seagrass",
+      "path": "~/Rupees/Plant Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableTallSeagrass",
+      "type": "loottable",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_tall_seagrass",
+      "path": "~/Rupees/Plant Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableFishingTreasure",
+      "type": "loottable",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_fishing_treasure",
+      "path": "~/Rupees/Fishing Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableBonusChest",
+      "type": "loottable",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_bonus_chest",
+      "path": "~/Rupees/Chest Loot Tables"
     }
   ],
   "variable_elements": [
@@ -340,6 +374,18 @@
         "children": [
           {
             "name": "Commands",
+            "children": []
+          },
+          {
+            "name": "Plant Loot Tables",
+            "children": []
+          },
+          {
+            "name": "Fishing Loot Tables",
+            "children": []
+          },
+          {
+            "name": "Chest Loot Tables",
             "children": []
           }
         ]
