@@ -486,6 +486,15 @@
         ]
       },
       "path": "~/Rupees/Advancements"
+    },
+    {
+      "name": "RupeeLootTableBartering",
+      "type": "loottable",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_bartering",
+      "path": "~/Rupees/Misc Loot Tables"
     }
   ],
   "variable_elements": [
@@ -601,6 +610,10 @@
           },
           {
             "name": "Advancements",
+            "children": []
+          },
+          {
+            "name": "Misc Loot Tables",
             "children": []
           }
         ]
