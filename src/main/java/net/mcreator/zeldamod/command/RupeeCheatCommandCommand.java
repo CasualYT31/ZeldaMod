@@ -13,6 +13,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.commands.Commands;
 
+import net.mcreator.zeldamod.procedures.RupeeLevelSetProcedure;
 import net.mcreator.zeldamod.procedures.RupeeCountSetProcedure;
 import net.mcreator.zeldamod.procedures.RupeeCountRemoveProcedure;
 import net.mcreator.zeldamod.procedures.RupeeCountAddProcedure;
@@ -48,7 +49,21 @@ public class RupeeCheatCommandCommand {
 
 					RupeeCountRemoveProcedure.execute(arguments, entity);
 					return 0;
-				}))).then(Commands.literal("set").then(Commands.argument("rupees", DoubleArgumentType.doubleArg(0)).executes(arguments -> {
+				}))).then(Commands.literal("set")
+						.then(Commands.literal("level").then(Commands.argument("level", DoubleArgumentType.doubleArg(1, 3)).executes(arguments -> {
+							ServerLevel world = arguments.getSource().getLevel();
+							double x = arguments.getSource().getPosition().x();
+							double y = arguments.getSource().getPosition().y();
+							double z = arguments.getSource().getPosition().z();
+							Entity entity = arguments.getSource().getEntity();
+							if (entity == null)
+								entity = FakePlayerFactory.getMinecraft(world);
+							Direction direction = entity.getDirection();
+
+							RupeeLevelSetProcedure.execute(arguments, entity);
+							return 0;
+						}))))
+				.then(Commands.literal("set").then(Commands.argument("rupees", DoubleArgumentType.doubleArg(0)).executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();

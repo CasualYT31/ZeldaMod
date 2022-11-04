@@ -25,5 +25,14 @@
         "stream": false
       }
     ]
+  },
+  "get_wallet_upgrade": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "zelda_mod:get_wallet_upgrade",
+        "stream": false
+      }
+    ]
   }
 }

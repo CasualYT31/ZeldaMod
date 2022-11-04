@@ -15,7 +15,7 @@
           }
         ]
       },
-      "path": "~/Rupees"
+      "path": "~/Rupees/Wallet Elements"
     },
     {
       "name": "RupeeCommand",
@@ -92,7 +92,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "rupee_green",
-      "path": "~/Rupees"
+      "path": "~/Rupees/Rupees"
     },
     {
       "name": "ZeldaTab",
@@ -127,7 +127,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "rupee_loot_table",
-      "path": "~/Rupees"
+      "path": "~/Rupees/Entity Loot Tables"
     },
     {
       "name": "RupeeEntityDrops",
@@ -160,7 +160,7 @@
           }
         ]
       },
-      "path": "~/Rupees"
+      "path": "~/Rupees/Entity Loot Tables"
     },
     {
       "name": "RupeeCountSet",
@@ -218,7 +218,7 @@
           }
         ]
       },
-      "path": "~/Rupees"
+      "path": "~/Rupees/Wallet Elements"
     },
     {
       "name": "RupeeLootTableRare",
@@ -227,7 +227,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "rupee_loot_table_rare",
-      "path": "~/Rupees"
+      "path": "~/Rupees/Entity Loot Tables"
     },
     {
       "name": "RupeeLootTableFriendly",
@@ -236,7 +236,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "rupee_loot_table_friendly",
-      "path": "~/Rupees"
+      "path": "~/Rupees/Entity Loot Tables"
     },
     {
       "name": "RupeeBlue",
@@ -245,7 +245,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "rupee_blue",
-      "path": "~/Rupees"
+      "path": "~/Rupees/Rupees"
     },
     {
       "name": "RupeeRed",
@@ -254,7 +254,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "rupee_red",
-      "path": "~/Rupees"
+      "path": "~/Rupees/Rupees"
     },
     {
       "name": "RupeeLootTableTallGrass",
@@ -318,6 +318,122 @@
       "locked_code": true,
       "registry_name": "rupee_loot_table_bonus_chest",
       "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableFern",
+      "type": "loottable",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_fern",
+      "path": "~/Rupees/Plant Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableLargeFern",
+      "type": "loottable",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_large_fern",
+      "path": "~/Rupees/Plant Loot Tables"
+    },
+    {
+      "name": "RupeeTag",
+      "type": "tag",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_tag",
+      "path": "~/Rupees/Rupees"
+    },
+    {
+      "name": "RupeeWallet",
+      "type": "item",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_wallet",
+      "path": "~/Rupees/Wallet Elements"
+    },
+    {
+      "name": "RupeeLimitInitialise",
+      "type": "procedure",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_limit_initialise",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Rupees/Wallet Elements"
+    },
+    {
+      "name": "RupeeWalletUpgrade",
+      "type": "item",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_wallet_upgrade",
+      "path": "~/Rupees/Wallet Elements"
+    },
+    {
+      "name": "RupeeLevelSet",
+      "type": "procedure",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_level_set",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Rupees/Commands"
+    },
+    {
+      "name": "RupeeRightClickActions",
+      "type": "procedure",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_right_click_actions",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Rupees/Wallet Elements"
     }
   ],
   "variable_elements": [
@@ -325,7 +441,13 @@
       "name": "rupee_count",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "0.0"
+    },
+    {
+      "name": "rupee_limit",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "99.0"
     }
   ],
   "sound_elements": [
@@ -352,15 +474,26 @@
       ],
       "category": "neutral",
       "subtitle": ""
+    },
+    {
+      "name": "get_wallet_upgrade",
+      "files": [
+        "get_wallet_upgrade"
+      ],
+      "category": "neutral",
+      "subtitle": ""
     }
   ],
   "language_map": {
     "en_us": {
       "item.zelda_mod.rupee_blue": "Blue Rupee",
+      "item.zelda_mod.rupee_wallet": "Rupee Wallet",
       "item.zelda_mod.rupee_red": "Red Rupee",
       "itemGroup.tabzelda_tab": "Zelda Tab",
       "subtitles.get_blue_rupee": "",
+      "subtitles.get_wallet_upgrade": "",
       "subtitles.get_green_rupee": "",
+      "item.zelda_mod.rupee_wallet_upgrade": "Rupee Wallet Upgrade",
       "subtitles.get_rupee": "Collect a rupee.",
       "subtitles.get_red_rupee": "",
       "item.zelda_mod.rupee_green": "Green Rupee"
@@ -386,6 +519,18 @@
           },
           {
             "name": "Chest Loot Tables",
+            "children": []
+          },
+          {
+            "name": "Wallet Elements",
+            "children": []
+          },
+          {
+            "name": "Entity Loot Tables",
+            "children": []
+          },
+          {
+            "name": "Rupees",
             "children": []
           }
         ]

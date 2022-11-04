@@ -15,5 +15,10 @@ public class RupeeCountDisplayProcedure {
 					+ new java.text.DecimalFormat("#").format((entity.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_count))),
 					(false));
+		if (entity instanceof Player _player && !_player.level.isClientSide())
+			_player.displayClientMessage(new TextComponent(("Your rupee limit is "
+					+ new java.text.DecimalFormat("#").format((entity.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_limit))),
+					(false));
 	}
 }

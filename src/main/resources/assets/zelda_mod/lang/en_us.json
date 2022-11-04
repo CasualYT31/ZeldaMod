@@ -1,9 +1,12 @@
 {
   "item.zelda_mod.rupee_blue": "Blue Rupee",
+  "item.zelda_mod.rupee_wallet": "Rupee Wallet",
   "item.zelda_mod.rupee_red": "Red Rupee",
   "itemGroup.tabzelda_tab": "Zelda Tab",
   "subtitles.get_blue_rupee": "",
+  "subtitles.get_wallet_upgrade": "",
   "subtitles.get_green_rupee": "",
+  "item.zelda_mod.rupee_wallet_upgrade": "Rupee Wallet Upgrade",
   "subtitles.get_rupee": "Collect a rupee.",
   "subtitles.get_red_rupee": "",
   "item.zelda_mod.rupee_green": "Green Rupee"

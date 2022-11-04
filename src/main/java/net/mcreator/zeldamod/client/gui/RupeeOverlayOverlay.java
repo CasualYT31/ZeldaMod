@@ -33,6 +33,11 @@ public class RupeeOverlayOverlay {
 	private static double _oldRupeeCount = 0.0;
 
 	/**
+	 * Keeps track of the current entity's (i.e. the player's) rupee limit.
+	 */
+	private static double _oldRupeeLimit = 0.0;
+
+	/**
 	 * Timer used to display the overlay temporarily when not in the inventory screen.
 	 */
 	private static long _timer = 0;
@@ -42,6 +47,28 @@ public class RupeeOverlayOverlay {
 	 */
 	private static long _deadline = 0;
 
+	/**
+	 * Calculates the format string to use with the rupee overlay.
+	 * The rupee count is padded with 0s depending on the wallet level the player has.
+	 */
+	private static String rupeeCounterFormat() {
+		double limit = ((Minecraft.getInstance().player.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_limit);
+		if (limit < 999) {
+			// Level 1 - limit is 99.
+			return "%02.0f";
+		} else if (limit < 9999) {
+			// Level 2 - limit is 999.
+			return "%03.0f";
+		} else {
+			// Level 3 - limit is 9999.
+			return "%04.0f";
+		}
+	}
+
+	/**
+	 * Display the rupee overlay in a GUI.
+	 */
 	private static void displayOverlay(ScreenEvent.DrawScreenEvent.Post event) {
 		RenderSystem.disableDepthTest();
 		RenderSystem.depthMask(false);
@@ -52,7 +79,7 @@ public class RupeeOverlayOverlay {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		
 		Minecraft.getInstance().font.drawShadow(event.getPoseStack(),
-				String.format("%.0f", ((Minecraft.getInstance().player.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				String.format(rupeeCounterFormat(), ((Minecraft.getInstance().player.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_count)),
 				20, 10, -1);
 		RenderSystem.setShaderTexture(0, new ResourceLocation("zelda_mod:textures/screens/rupee.png"));
@@ -65,6 +92,9 @@ public class RupeeOverlayOverlay {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 	}
 
+	/**
+	 * Display the rupee overlay in-game.
+	 */
 	private static void displayOverlay(RenderGameOverlayEvent.Pre event) {
 		RenderSystem.disableDepthTest();
 		RenderSystem.depthMask(false);
@@ -75,7 +105,7 @@ public class RupeeOverlayOverlay {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		
 		Minecraft.getInstance().font.drawShadow(event.getMatrixStack(),
-				String.format("%.0f", ((Minecraft.getInstance().player.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				String.format(rupeeCounterFormat(), ((Minecraft.getInstance().player.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_count)),
 				20, (int)_yForInGameOverlay + 5, -1);
 		RenderSystem.setShaderTexture(0, new ResourceLocation("zelda_mod:textures/screens/rupee.png"));
@@ -88,6 +118,9 @@ public class RupeeOverlayOverlay {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 	}
 
+	/**
+	 * The states that the in-game rupee overlay can be in.
+	 */
 	private enum OverlayState {
 		HIDING,
 		APPEARING,   // 0.1 seconds
@@ -95,17 +128,29 @@ public class RupeeOverlayOverlay {
 		DISAPPEARING // 0.1 seconds
 	}
 
+	/**
+	 * The current state of the in-game rupee overlay.
+	 */
 	private static OverlayState _state = OverlayState.HIDING;
 
+	/**
+	 * The Y location of the in-game rupee overlay.
+	 * Changed depending on the overlay's state.
+	 */
 	private static double _yForInGameOverlay = -18.0;
 
+	/**
+	 * Starts the process of making the rupee overlay visible, only if it is currently hidden.
+	 */
 	private static void beginStateMachine() {
-		// Ignore calls to begin the state machine if we are in motion.
 		if (!_firstCall && _deadline == 0) {
 			nextState();
 		}
 	}
 
+	/**
+	 * Performs Y location calculations depending on the current state.
+	 */
 	private static void handleCurrentState(double delta) {
 		switch (_state) {
 			case HIDING:
@@ -123,6 +168,9 @@ public class RupeeOverlayOverlay {
 		}
 	}
 
+	/**
+	 * Moves the in-game overlay to the next state of its animation.
+	 */
 	private static void nextState() {
 		switch (_state) {
 			case HIDING:
@@ -143,7 +191,10 @@ public class RupeeOverlayOverlay {
 				break;
 		}
 	}
-	
+
+	/**
+	 * Display the rupee overlay in a GUI.
+	 */
 	@SubscribeEvent(priority = EventPriority.NORMAL)
 	public static void eventHandler(ScreenEvent.DrawScreenEvent.Post event) {
 		if (event.getScreen() instanceof InventoryScreen || event.getScreen() instanceof CreativeModeInventoryScreen) {
@@ -151,8 +202,14 @@ public class RupeeOverlayOverlay {
 		}
 	}
 
+	/**
+	 * Tracks if the first call to the in-game event handler for the overlay has been made yet.
+	 */
 	private static boolean _firstCall = true;
 
+	/**
+	 * Display the rupee overlay in-game.
+	 */
 	@SubscribeEvent(priority = EventPriority.NORMAL)
 	public static void eventHandler(RenderGameOverlayEvent.Pre event) {
 		if (event.getType() == RenderGameOverlayEvent.ElementType.ALL) {
@@ -163,12 +220,15 @@ public class RupeeOverlayOverlay {
 			double delta = (double)(now.getTime() - _timer) / 1000.0;
 			_timer = now.getTime();
 			
-			// Start the state machine if the rupee count changes.
+			// Start the state machine if the rupee count or limit changes.
 			double newRupeeCount = ((Minecraft.getInstance().player.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_count);
-			if (_oldRupeeCount != newRupeeCount) {
+			double newRupeeLimit = ((Minecraft.getInstance().player.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_limit);
+			if (_oldRupeeCount != newRupeeCount || _oldRupeeLimit != newRupeeLimit) {
 				beginStateMachine();
 				_oldRupeeCount = newRupeeCount;
+				_oldRupeeLimit = newRupeeLimit;
 			}
 
 			// Manage the state machine if it is in motion.

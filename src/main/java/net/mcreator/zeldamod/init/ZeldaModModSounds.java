@@ -21,6 +21,8 @@ public class ZeldaModModSounds {
 		REGISTRY.put(new ResourceLocation("zelda_mod", "get_blue_rupee"), new SoundEvent(new ResourceLocation("zelda_mod", "get_blue_rupee")));
 		REGISTRY.put(new ResourceLocation("zelda_mod", "get_red_rupee"), new SoundEvent(new ResourceLocation("zelda_mod", "get_red_rupee")));
 		REGISTRY.put(new ResourceLocation("zelda_mod", "get_green_rupee"), new SoundEvent(new ResourceLocation("zelda_mod", "get_green_rupee")));
+		REGISTRY.put(new ResourceLocation("zelda_mod", "get_wallet_upgrade"),
+				new SoundEvent(new ResourceLocation("zelda_mod", "get_wallet_upgrade")));
 	}
 
 	@SubscribeEvent

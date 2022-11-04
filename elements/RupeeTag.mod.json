@@ -1,0 +1,23 @@
+{
+  "_fv": 33,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:RupeeGreen"
+      },
+      {
+        "value": "CUSTOM:RupeeBlue"
+      },
+      {
+        "value": "CUSTOM:RupeeRed"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "name": "rupee",
+    "namespace": "forge"
+  }
+}

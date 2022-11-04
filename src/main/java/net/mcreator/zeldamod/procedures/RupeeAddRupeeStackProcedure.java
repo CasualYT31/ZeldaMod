@@ -61,9 +61,12 @@ public class RupeeAddRupeeStackProcedure {
 			});
 		}
 		if ((entity.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_count > 99) {
+				.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_count > (entity
+						.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_limit) {
 			{
-				double _setval = 99;
+				double _setval = (entity.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_limit;
 				entity.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.rupee_count = _setval;
 					capability.syncPlayerVariables(entity);

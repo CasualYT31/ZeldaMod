@@ -10,6 +10,8 @@ import net.minecraftforge.registries.DeferredRegister;
 
 import net.minecraft.world.item.Item;
 
+import net.mcreator.zeldamod.item.RupeeWalletUpgradeItem;
+import net.mcreator.zeldamod.item.RupeeWalletItem;
 import net.mcreator.zeldamod.item.RupeeRedItem;
 import net.mcreator.zeldamod.item.RupeeGreenItem;
 import net.mcreator.zeldamod.item.RupeeBlueItem;
@@ -20,4 +22,6 @@ public class ZeldaModModItems {
 	public static final RegistryObject<Item> RUPEE_GREEN = REGISTRY.register("rupee_green", () -> new RupeeGreenItem());
 	public static final RegistryObject<Item> RUPEE_BLUE = REGISTRY.register("rupee_blue", () -> new RupeeBlueItem());
 	public static final RegistryObject<Item> RUPEE_RED = REGISTRY.register("rupee_red", () -> new RupeeRedItem());
+	public static final RegistryObject<Item> RUPEE_WALLET = REGISTRY.register("rupee_wallet", () -> new RupeeWalletItem());
+	public static final RegistryObject<Item> RUPEE_WALLET_UPGRADE = REGISTRY.register("rupee_wallet_upgrade", () -> new RupeeWalletUpgradeItem());
 }

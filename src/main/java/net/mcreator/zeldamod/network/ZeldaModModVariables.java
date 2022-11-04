@@ -73,6 +73,7 @@ public class ZeldaModModVariables {
 			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new PlayerVariables()));
 			clone.rupee_count = original.rupee_count;
+			clone.rupee_limit = original.rupee_limit;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -109,7 +110,8 @@ public class ZeldaModModVariables {
 	}
 
 	public static class PlayerVariables {
-		public double rupee_count = 0;
+		public double rupee_count = 0.0;
+		public double rupee_limit = 99.0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -119,12 +121,14 @@ public class ZeldaModModVariables {
 		public Tag writeNBT() {
 			CompoundTag nbt = new CompoundTag();
 			nbt.putDouble("rupee_count", rupee_count);
+			nbt.putDouble("rupee_limit", rupee_limit);
 			return nbt;
 		}
 
 		public void readNBT(Tag Tag) {
 			CompoundTag nbt = (CompoundTag) Tag;
 			rupee_count = nbt.getDouble("rupee_count");
+			rupee_limit = nbt.getDouble("rupee_limit");
 		}
 	}
 
@@ -151,6 +155,7 @@ public class ZeldaModModVariables {
 					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new PlayerVariables()));
 					variables.rupee_count = message.data.rupee_count;
+					variables.rupee_limit = message.data.rupee_limit;
 				}
 			});
 			context.setPacketHandled(true);
