@@ -57,12 +57,14 @@ public class RupeeRightClickActionsProcedure {
 				}
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(new TextComponent("Upgraded your wallet to level 2!"), (true));
-				if (entity instanceof LivingEntity _entity) {
-					ItemStack _setstack = new ItemStack(Blocks.AIR);
-					_setstack.setCount(1);
-					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
-					if (_entity instanceof Player _player)
-						_player.getInventory().setChanged();
+				if (!(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
+					if (entity instanceof LivingEntity _entity) {
+						ItemStack _setstack = new ItemStack(Blocks.AIR);
+						_setstack.setCount(1);
+						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+						if (_entity instanceof Player _player)
+							_player.getInventory().setChanged();
+					}
 				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
@@ -85,12 +87,14 @@ public class RupeeRightClickActionsProcedure {
 				}
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(new TextComponent("Upgraded your wallet to level 3!"), (true));
-				if (entity instanceof LivingEntity _entity) {
-					ItemStack _setstack = new ItemStack(Blocks.AIR);
-					_setstack.setCount(1);
-					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
-					if (_entity instanceof Player _player)
-						_player.getInventory().setChanged();
+				if (!(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
+					if (entity instanceof LivingEntity _entity) {
+						ItemStack _setstack = new ItemStack(Blocks.AIR);
+						_setstack.setCount(1);
+						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+						if (_entity instanceof Player _player)
+							_player.getInventory().setChanged();
+					}
 				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
@@ -164,12 +168,14 @@ public class RupeeRightClickActionsProcedure {
 										.getDouble("rupeeCount")))
 								+ " rupees to your wallet!")), (true));
 				}
-				if (entity instanceof LivingEntity _entity) {
-					ItemStack _setstack = new ItemStack(Blocks.AIR);
-					_setstack.setCount(1);
-					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
-					if (_entity instanceof Player _player)
-						_player.getInventory().setChanged();
+				if (!(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
+					if (entity instanceof LivingEntity _entity) {
+						ItemStack _setstack = new ItemStack(Blocks.AIR);
+						_setstack.setCount(1);
+						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+						if (_entity instanceof Player _player)
+							_player.getInventory().setChanged();
+					}
 				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {

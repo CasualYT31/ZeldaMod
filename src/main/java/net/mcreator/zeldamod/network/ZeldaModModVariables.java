@@ -74,6 +74,7 @@ public class ZeldaModModVariables {
 					.orElse(new PlayerVariables()));
 			clone.rupee_count = original.rupee_count;
 			clone.rupee_limit = original.rupee_limit;
+			clone.rupees_collected = original.rupees_collected;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -112,6 +113,7 @@ public class ZeldaModModVariables {
 	public static class PlayerVariables {
 		public double rupee_count = 0.0;
 		public double rupee_limit = 99.0;
+		public double rupees_collected = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -122,6 +124,7 @@ public class ZeldaModModVariables {
 			CompoundTag nbt = new CompoundTag();
 			nbt.putDouble("rupee_count", rupee_count);
 			nbt.putDouble("rupee_limit", rupee_limit);
+			nbt.putDouble("rupees_collected", rupees_collected);
 			return nbt;
 		}
 
@@ -129,6 +132,7 @@ public class ZeldaModModVariables {
 			CompoundTag nbt = (CompoundTag) Tag;
 			rupee_count = nbt.getDouble("rupee_count");
 			rupee_limit = nbt.getDouble("rupee_limit");
+			rupees_collected = nbt.getDouble("rupees_collected");
 		}
 	}
 
@@ -156,6 +160,7 @@ public class ZeldaModModVariables {
 							.orElse(new PlayerVariables()));
 					variables.rupee_count = message.data.rupee_count;
 					variables.rupee_limit = message.data.rupee_limit;
+					variables.rupees_collected = message.data.rupees_collected;
 				}
 			});
 			context.setPacketHandled(true);

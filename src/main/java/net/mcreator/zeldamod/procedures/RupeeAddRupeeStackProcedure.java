@@ -18,6 +18,7 @@ public class RupeeAddRupeeStackProcedure {
 		if (entity == null)
 			return;
 		double rupeeValue = 0;
+		double rupees = 0;
 		if (itemstack.getItem() == ZeldaModModItems.RUPEE_GREEN.get()) {
 			rupeeValue = 1;
 			if (world instanceof Level _level) {
@@ -52,11 +53,20 @@ public class RupeeAddRupeeStackProcedure {
 				}
 			}
 		}
+		rupees = (itemstack).getCount() * rupeeValue;
 		{
 			double _setval = (entity.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_count + (itemstack).getCount() * rupeeValue;
+					.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_count + rupees;
 			entity.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.rupee_count = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
+		{
+			double _setval = (entity.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new ZeldaModModVariables.PlayerVariables())).rupees_collected + rupees;
+			entity.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.rupees_collected = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}
@@ -64,6 +74,18 @@ public class RupeeAddRupeeStackProcedure {
 				.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_count > (entity
 						.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_limit) {
+			{
+				double _setval = (entity.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new ZeldaModModVariables.PlayerVariables())).rupees_collected
+						- ((entity.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_count
+								- (entity.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+										.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_limit);
+				entity.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.rupees_collected = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 			{
 				double _setval = (entity.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_limit;

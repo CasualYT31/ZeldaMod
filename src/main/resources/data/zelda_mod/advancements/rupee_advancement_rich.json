@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "zelda_mod:rupee_red"
+    },
+    "title": {
+      "translate": "advancements.rupee_advancement_rich.title"
+    },
+    "description": {
+      "translate": "advancements.rupee_advancement_rich.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "rupee_advancement_rich": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 100
+  },
+  "parent": "zelda_mod:rupee_advancement_max_wallet"
+}

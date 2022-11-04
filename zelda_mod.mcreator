@@ -434,6 +434,58 @@
         ]
       },
       "path": "~/Rupees/Wallet Elements"
+    },
+    {
+      "name": "RupeeAdvancementFindRupee",
+      "type": "achievement",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_advancement_find_rupee",
+      "path": "~/Rupees/Advancements"
+    },
+    {
+      "name": "ZeldaRootAdvancement",
+      "type": "achievement",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zelda_root_advancement"
+    },
+    {
+      "name": "RupeeAdvancementMaxWallet",
+      "type": "achievement",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_advancement_max_wallet",
+      "path": "~/Rupees/Advancements"
+    },
+    {
+      "name": "RupeeAdvancementRich",
+      "type": "achievement",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_advancement_rich",
+      "path": "~/Rupees/Advancements"
+    },
+    {
+      "name": "RupeeAdvancementChecks",
+      "type": "procedure",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_advancement_checks",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Rupees/Advancements"
     }
   ],
   "variable_elements": [
@@ -448,6 +500,12 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "99.0"
+    },
+    {
+      "name": "rupees_collected",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [
@@ -486,16 +544,24 @@
   ],
   "language_map": {
     "en_us": {
-      "item.zelda_mod.rupee_blue": "Blue Rupee",
-      "item.zelda_mod.rupee_wallet": "Rupee Wallet",
       "item.zelda_mod.rupee_red": "Red Rupee",
       "itemGroup.tabzelda_tab": "Zelda Tab",
+      "advancements.rupee_advancement_rich.title": "The 1%",
+      "advancements.zelda_root_advancement.title": "The Legend of Zelda",
+      "advancements.rupee_advancement_find_rupee.title": "Find Rupee",
+      "subtitles.get_red_rupee": "",
+      "advancements.rupee_advancement_max_wallet.title": "Huge Wallet",
+      "item.zelda_mod.rupee_blue": "Blue Rupee",
+      "item.zelda_mod.rupee_wallet": "Rupee Wallet",
+      "advancements.rupee_advancement_max_wallet.descr": "Fully upgrade your rupee wallet",
       "subtitles.get_blue_rupee": "",
       "subtitles.get_wallet_upgrade": "",
+      "advancements.rupee_advancement_rich.descr": "Collect 50,000 rupees",
       "subtitles.get_green_rupee": "",
+      "advancements.zelda_root_advancement.descr": "Link\u0027s adventure starts here",
       "item.zelda_mod.rupee_wallet_upgrade": "Rupee Wallet Upgrade",
       "subtitles.get_rupee": "Collect a rupee.",
-      "subtitles.get_red_rupee": "",
+      "advancements.rupee_advancement_find_rupee.descr": "Find a rupee",
       "item.zelda_mod.rupee_green": "Green Rupee"
     }
   },
@@ -531,6 +597,10 @@
           },
           {
             "name": "Rupees",
+            "children": []
+          },
+          {
+            "name": "Advancements",
             "children": []
           }
         ]
