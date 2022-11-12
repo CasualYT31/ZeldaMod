@@ -1,8 +1,8 @@
 {
   "display": {
-    "background": "zelda_mod:textures/screens/rupee.png",
+    "background": "zelda_mod:textures/screens/zeldamod.png",
     "icon": {
-      "item": "zelda_mod:rupee_green"
+      "item": "zelda_mod:zelda_icon"
     },
     "title": {
       "translate": "advancements.zelda_root_advancement.title"

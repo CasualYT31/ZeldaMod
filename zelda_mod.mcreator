@@ -513,6 +513,14 @@
       "locked_code": true,
       "registry_name": "rupee_overlay",
       "path": "~/Rupees"
+    },
+    {
+      "name": "ZeldaIcon",
+      "type": "item",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zelda_icon"
     }
   ],
   "variable_elements": [
@@ -578,6 +586,7 @@
       "advancements.rupee_advancement_find_rupee.title": "Find Rupee",
       "subtitles.get_red_rupee": "",
       "advancements.rupee_advancement_max_wallet.title": "Huge Wallet",
+      "item.zelda_mod.zelda_icon": "Zelda Icon",
       "item.zelda_mod.rupee_blue": "Blue Rupee",
       "item.zelda_mod.rupee_wallet": "Rupee Wallet",
       "advancements.rupee_advancement_max_wallet.descr": "Fully upgrade your rupee wallet",

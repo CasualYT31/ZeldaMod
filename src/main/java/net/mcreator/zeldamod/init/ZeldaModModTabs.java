@@ -14,7 +14,7 @@ public class ZeldaModModTabs {
 		TAB_ZELDA_TAB = new CreativeModeTab("tabzelda_tab") {
 			@Override
 			public ItemStack makeIcon() {
-				return new ItemStack(ZeldaModModItems.RUPEE_GREEN.get());
+				return new ItemStack(ZeldaModModItems.ZELDA_ICON.get());
 			}
 
 			@Override

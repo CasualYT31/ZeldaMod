@@ -5,9 +5,9 @@
     "achievementName": "The Legend of Zelda",
     "achievementDescription": "Link's adventure starts here",
     "achievementIcon": {
-      "value": "CUSTOM:RupeeGreen"
+      "value": "CUSTOM:ZeldaIcon"
     },
-    "background": "rupee.png",
+    "background": "zeldamod.png",
     "disableDisplay": false,
     "showPopup": false,
     "announceToChat": false,
