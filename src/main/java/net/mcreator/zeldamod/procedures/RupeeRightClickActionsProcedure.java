@@ -16,7 +16,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.zeldamod.network.ZeldaModModVariables;
@@ -28,9 +28,9 @@ import javax.annotation.Nullable;
 public class RupeeRightClickActionsProcedure {
 	@SubscribeEvent
 	public static void onRightClickItem(PlayerInteractEvent.RightClickItem event) {
-		if (event.getHand() != event.getPlayer().getUsedItemHand())
+		if (event.getHand() != event.getEntity().getUsedItemHand())
 			return;
-		execute(event, event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), event.getPlayer());
+		execute(event, event.getLevel(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), event.getEntity());
 	}
 
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -56,7 +56,7 @@ public class RupeeRightClickActionsProcedure {
 					});
 				}
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(new TextComponent("Upgraded your wallet to level 2!"), (true));
+					_player.displayClientMessage(Component.literal("Upgraded your wallet to level 2!"), (true));
 				if (!(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
 					if (entity instanceof LivingEntity _entity) {
 						ItemStack _setstack = new ItemStack(Blocks.AIR);
@@ -86,7 +86,7 @@ public class RupeeRightClickActionsProcedure {
 					});
 				}
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(new TextComponent("Upgraded your wallet to level 3!"), (true));
+					_player.displayClientMessage(Component.literal("Upgraded your wallet to level 3!"), (true));
 				if (!(entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)) {
 					if (entity instanceof LivingEntity _entity) {
 						ItemStack _setstack = new ItemStack(Blocks.AIR);
@@ -108,7 +108,7 @@ public class RupeeRightClickActionsProcedure {
 				}
 			} else {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(new TextComponent("Your wallet is already at the highest level!"), (true));
+					_player.displayClientMessage(Component.literal("Your wallet is already at the highest level!"), (true));
 			}
 		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == ZeldaModModItems.RUPEE_WALLET
 				.get()) {
@@ -134,10 +134,10 @@ public class RupeeRightClickActionsProcedure {
 				if (rupeeDifference == 1) {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
 						_player.displayClientMessage(
-								new TextComponent("Couldn't fit all of the rupees into your wallet. There is 1 rupee remaining!"), (true));
+								Component.literal("Couldn't fit all of the rupees into your wallet. There is 1 rupee remaining!"), (true));
 				} else {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(("Couldn't fit all of the rupees into your wallet. There are "
+						_player.displayClientMessage(Component.literal(("Couldn't fit all of the rupees into your wallet. There are "
 								+ new java.text.DecimalFormat("#").format(rupeeDifference) + " rupees remaining!")), (true));
 				}
 				if (world instanceof Level _level) {
@@ -160,10 +160,10 @@ public class RupeeRightClickActionsProcedure {
 				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag()
 						.getDouble("rupeeCount") == 1) {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent("Added 1 rupee to your wallet!"), (true));
+						_player.displayClientMessage(Component.literal("Added 1 rupee to your wallet!"), (true));
 				} else {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(("Added " + (new java.text.DecimalFormat("#")
+						_player.displayClientMessage(Component.literal(("Added " + (new java.text.DecimalFormat("#")
 								.format((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag()
 										.getDouble("rupeeCount")))
 								+ " rupees to your wallet!")), (true));

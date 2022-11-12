@@ -4,9 +4,6 @@
  */
 package net.mcreator.zeldamod.init;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.CreativeModeTab;
 
@@ -20,7 +17,7 @@ public class ZeldaModModTabs {
 				return new ItemStack(ZeldaModModItems.RUPEE_GREEN.get());
 			}
 
-			@OnlyIn(Dist.CLIENT)
+			@Override
 			public boolean hasSearchBar() {
 				return true;
 			}

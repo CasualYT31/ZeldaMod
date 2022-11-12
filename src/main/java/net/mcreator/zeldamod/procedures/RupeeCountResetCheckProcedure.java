@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public class RupeeCountResetCheckProcedure {
 	@SubscribeEvent
 	public static void onPlayerRespawned(PlayerEvent.PlayerRespawnEvent event) {
-		execute(event, event.getPlayer());
+		execute(event, event.getEntity());
 	}
 
 	public static void execute(Entity entity) {

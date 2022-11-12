@@ -2,9 +2,9 @@
   "_fv": 34,
   "_type": "loottable",
   "definition": {
-    "type": "Block",
+    "type": "Chest",
     "pools": [],
-    "name": "blocks/grass",
+    "name": "chests/desert_pyramid",
     "namespace": "minecraft"
   }
 }

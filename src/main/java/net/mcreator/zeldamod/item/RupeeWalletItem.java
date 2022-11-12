@@ -7,7 +7,6 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.zeldamod.procedures.RupeeAddRupeeStackProcedure;
@@ -31,9 +30,9 @@ public class RupeeWalletItem extends Item {
 		if (rupeeCount != 1) {
 			rupeesLabel = rupeesLabel + "s";
 		}
-		list.add(new TextComponent("Holds a player's rupees when they die."));
-		list.add(new TextComponent(String.format("%.0f", rupeeCount) + rupeesLabel + "."));
-		list.add(new TextComponent("Use right-click to add the rupees in this wallet to your own."));
+		list.add(Component.literal("Holds a player's rupees when they die."));
+		list.add(Component.literal(String.format("%.0f", rupeeCount) + rupeesLabel + "."));
+		list.add(Component.literal("Use right-click to add the rupees in this wallet to your own."));
 	}
 
 }

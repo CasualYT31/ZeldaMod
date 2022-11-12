@@ -8,7 +8,7 @@ import org.checkerframework.checker.units.qual.h;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.minecraftforge.client.event.RenderGuiEvent;
 import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -69,7 +69,7 @@ public class RupeeOverlayOverlay {
 	/**
 	 * Display the rupee overlay in a GUI.
 	 */
-	private static void displayOverlay(ScreenEvent.DrawScreenEvent.Post event) {
+	private static void displayOverlay(ScreenEvent.Render.Post event) {
 		RenderSystem.disableDepthTest();
 		RenderSystem.depthMask(false);
 		RenderSystem.enableBlend();
@@ -95,7 +95,7 @@ public class RupeeOverlayOverlay {
 	/**
 	 * Display the rupee overlay in-game.
 	 */
-	private static void displayOverlay(RenderGameOverlayEvent.Pre event) {
+	private static void displayOverlay(RenderGuiEvent.Pre event) {
 		RenderSystem.disableDepthTest();
 		RenderSystem.depthMask(false);
 		RenderSystem.enableBlend();
@@ -104,12 +104,12 @@ public class RupeeOverlayOverlay {
 				GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		
-		Minecraft.getInstance().font.drawShadow(event.getMatrixStack(),
+		Minecraft.getInstance().font.drawShadow(event.getPoseStack(),
 				String.format(rupeeCounterFormat(), ((Minecraft.getInstance().player.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_count)),
 				20, (int)_yForInGameOverlay + 5, -1);
 		RenderSystem.setShaderTexture(0, new ResourceLocation("zelda_mod:textures/screens/rupee.png"));
-		Minecraft.getInstance().gui.blit(event.getMatrixStack(), 5, (int)_yForInGameOverlay, 0, 0, 16, 16, 16, 16);
+		Minecraft.getInstance().gui.blit(event.getPoseStack(), 5, (int)_yForInGameOverlay, 0, 0, 16, 16, 16, 16);
 
 		RenderSystem.depthMask(true);
 		RenderSystem.defaultBlendFunc();
@@ -196,7 +196,7 @@ public class RupeeOverlayOverlay {
 	 * Display the rupee overlay in a GUI.
 	 */
 	@SubscribeEvent(priority = EventPriority.NORMAL)
-	public static void eventHandler(ScreenEvent.DrawScreenEvent.Post event) {
+	public static void eventHandler(ScreenEvent.Render.Post event) {
 		if (event.getScreen() instanceof InventoryScreen || event.getScreen() instanceof CreativeModeInventoryScreen) {
 			displayOverlay(event);
 		}
@@ -211,35 +211,33 @@ public class RupeeOverlayOverlay {
 	 * Display the rupee overlay in-game.
 	 */
 	@SubscribeEvent(priority = EventPriority.NORMAL)
-	public static void eventHandler(RenderGameOverlayEvent.Pre event) {
-		if (event.getType() == RenderGameOverlayEvent.ElementType.ALL) {
-			displayOverlay(event);
-			
-			// Shouldn't have to account for the Y2038 problem, since longs in Java are 64-bit.
-			Date now = new Date();
-			double delta = (double)(now.getTime() - _timer) / 1000.0;
-			_timer = now.getTime();
-			
-			// Start the state machine if the rupee count or limit changes.
-			double newRupeeCount = ((Minecraft.getInstance().player.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_count);
-			double newRupeeLimit = ((Minecraft.getInstance().player.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_limit);
-			if (_oldRupeeCount != newRupeeCount || _oldRupeeLimit != newRupeeLimit) {
-				beginStateMachine();
-				_oldRupeeCount = newRupeeCount;
-				_oldRupeeLimit = newRupeeLimit;
-			}
-
-			// Manage the state machine if it is in motion.
-			if (!_firstCall && _deadline > 0) {
-				if (_timer >= _deadline) {
-					nextState();
-				} else {
-					handleCurrentState(delta);
-				}
-			}
-			_firstCall = false;
+	public static void eventHandler(RenderGuiEvent.Pre event) {
+		displayOverlay(event);
+		
+		// Shouldn't have to account for the Y2038 problem, since longs in Java are 64-bit.
+		Date now = new Date();
+		double delta = (double)(now.getTime() - _timer) / 1000.0;
+		_timer = now.getTime();
+		
+		// Start the state machine if the rupee count or limit changes.
+		double newRupeeCount = ((Minecraft.getInstance().player.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+			.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_count);
+		double newRupeeLimit = ((Minecraft.getInstance().player.getCapability(ZeldaModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+			.orElse(new ZeldaModModVariables.PlayerVariables())).rupee_limit);
+		if (_oldRupeeCount != newRupeeCount || _oldRupeeLimit != newRupeeLimit) {
+			beginStateMachine();
+			_oldRupeeCount = newRupeeCount;
+			_oldRupeeLimit = newRupeeLimit;
 		}
+
+		// Manage the state machine if it is in motion.
+		if (!_firstCall && _deadline > 0) {
+			if (_timer >= _deadline) {
+				nextState();
+			} else {
+				handleCurrentState(delta);
+			}
+		}
+		_firstCall = false;
 	}
 }

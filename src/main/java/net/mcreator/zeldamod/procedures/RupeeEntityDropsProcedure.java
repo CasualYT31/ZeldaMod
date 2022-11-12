@@ -26,7 +26,7 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.AbstractGolem;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
@@ -64,22 +64,24 @@ public class RupeeEntityDropsProcedure {
 		} else if (entity instanceof Animal || entity instanceof Villager) {
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands()
-						.performCommand(
-								new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", new TextComponent(""),
+						.performPrefixedCommand(
+								new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""),
 										_level.getServer(), null).withSuppressedOutput(),
 								"loot spawn ~ ~ ~ loot zelda_mod:rupee_loot_table_friendly");
 		} else if (entity instanceof EnderMan || entity instanceof AbstractGolem || entity instanceof Blaze || entity instanceof Ghast
 				|| entity instanceof Piglin || entity instanceof WitherSkeleton || entity instanceof Witch || entity instanceof Guardian
 				|| entity instanceof ElderGuardian || entity instanceof Hoglin) {
 			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4,
-						"", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-						"loot spawn ~ ~ ~ loot zelda_mod:rupee_loot_table_rare");
+				_level.getServer().getCommands()
+						.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
+								Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+								"loot spawn ~ ~ ~ loot zelda_mod:rupee_loot_table_rare");
 		} else {
 			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4,
-						"", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-						"loot spawn ~ ~ ~ loot zelda_mod:entities/rupee_drops");
+				_level.getServer().getCommands()
+						.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
+								Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+								"loot spawn ~ ~ ~ loot zelda_mod:entities/rupee_drops");
 		}
 	}
 }

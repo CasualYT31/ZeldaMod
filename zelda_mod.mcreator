@@ -112,15 +112,6 @@
       "path": "~/Rupees/Commands"
     },
     {
-      "name": "RupeeOverlay",
-      "type": "overlay",
-      "sortid": 11,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "rupee_overlay",
-      "path": "~/Rupees"
-    },
-    {
       "name": "RupeeLootTable",
       "type": "loottable",
       "sortid": 12,
@@ -495,6 +486,33 @@
       "locked_code": true,
       "registry_name": "rupee_loot_table_bartering",
       "path": "~/Rupees/Misc Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableMineshaftChest",
+      "type": "loottable",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_mineshaft_chest",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTablePyramidChest",
+      "type": "loottable",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_pyramid_chest",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeOverlay",
+      "type": "overlay",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_overlay",
+      "path": "~/Rupees"
     }
   ],
   "variable_elements": [
@@ -633,10 +651,10 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.18.2",
+    "currentGenerator": "forge-1.19.2",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.zeldamod",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200234517
+  "mcreatorVersion": 202200346416
 }
