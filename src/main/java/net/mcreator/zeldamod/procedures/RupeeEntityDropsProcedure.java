@@ -12,16 +12,29 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.entity.monster.warden.Warden;
+import net.minecraft.world.entity.monster.piglin.PiglinBrute;
 import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.monster.hoglin.Hoglin;
+import net.minecraft.world.entity.monster.ZombifiedPiglin;
+import net.minecraft.world.entity.monster.Zoglin;
 import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.monster.Witch;
-import net.minecraft.world.entity.monster.Guardian;
+import net.minecraft.world.entity.monster.Vindicator;
+import net.minecraft.world.entity.monster.Strider;
+import net.minecraft.world.entity.monster.Shulker;
+import net.minecraft.world.entity.monster.Ravager;
+import net.minecraft.world.entity.monster.Illusioner;
+import net.minecraft.world.entity.monster.Giant;
 import net.minecraft.world.entity.monster.Ghast;
+import net.minecraft.world.entity.monster.Evoker;
+import net.minecraft.world.entity.monster.Endermite;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.monster.ElderGuardian;
 import net.minecraft.world.entity.monster.Blaze;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.animal.axolotl.Axolotl;
+import net.minecraft.world.entity.animal.allay.Allay;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.AbstractGolem;
 import net.minecraft.world.entity.Entity;
@@ -61,7 +74,7 @@ public class RupeeEntityDropsProcedure {
 				entityToSpawn.setPickUpDelay(10);
 				_level.addFreshEntity(entityToSpawn);
 			}
-		} else if (entity instanceof Animal || entity instanceof Villager) {
+		} else if (entity instanceof Animal || entity instanceof Allay || entity instanceof Axolotl || entity instanceof Villager) {
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands()
 						.performPrefixedCommand(
@@ -69,8 +82,11 @@ public class RupeeEntityDropsProcedure {
 										_level.getServer(), null).withSuppressedOutput(),
 								"loot spawn ~ ~ ~ loot zelda_mod:rupee_loot_table_friendly");
 		} else if (entity instanceof EnderMan || entity instanceof AbstractGolem || entity instanceof Blaze || entity instanceof Ghast
-				|| entity instanceof Piglin || entity instanceof WitherSkeleton || entity instanceof Witch || entity instanceof Guardian
-				|| entity instanceof ElderGuardian || entity instanceof Hoglin) {
+				|| entity instanceof Piglin || entity instanceof WitherSkeleton || entity instanceof Witch || entity instanceof Endermite
+				|| entity instanceof ElderGuardian || entity instanceof Evoker || entity instanceof Giant || entity instanceof Illusioner
+				|| entity instanceof PiglinBrute || entity instanceof Ravager || entity instanceof Shulker || entity instanceof Strider
+				|| entity instanceof Vindicator || entity instanceof Hoglin || entity instanceof Warden || entity instanceof ZombifiedPiglin
+				|| entity instanceof Zoglin) {
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands()
 						.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",

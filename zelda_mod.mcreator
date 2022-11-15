@@ -521,6 +521,141 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "zelda_icon"
+    },
+    {
+      "name": "RupeeLootTableAncientCity",
+      "type": "loottable",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_ancient_city",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableAncientCityIceBox",
+      "type": "loottable",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_ancient_city_ice_box",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableWoodlandMansion",
+      "type": "loottable",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_woodland_mansion",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableStrongholdCorridor",
+      "type": "loottable",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_stronghold_corridor",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableStrongholdCrossing",
+      "type": "loottable",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_stronghold_crossing",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableStrongholdLibrary",
+      "type": "loottable",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_stronghold_library",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableShipwreckTreasure",
+      "type": "loottable",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_shipwreck_treasure",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableJungleTemple",
+      "type": "loottable",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_jungle_temple",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableFortress",
+      "type": "loottable",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_fortress",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableEndCityTreasure",
+      "type": "loottable",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_end_city_treasure",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableBuriedTreasure",
+      "type": "loottable",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_buried_treasure",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableSimpleDungeon",
+      "type": "loottable",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_simple_dungeon",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableBastionTreasure",
+      "type": "loottable",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_bastion_treasure",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableUnderwaterRuinBig",
+      "type": "loottable",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_underwater_ruin_big",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableUnderwaterRuinSmall",
+      "type": "loottable",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_underwater_ruin_small",
+      "path": "~/Rupees/Chest Loot Tables"
     }
   ],
   "variable_elements": [
