@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "zelda_mod:rupee_wallet_upgrade"
+    },
+    "title": {
+      "translate": "advancements.rupee_advancement_max_wallet.title"
+    },
+    "description": {
+      "translate": "advancements.rupee_advancement_max_wallet.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "rupee_advancement_max_wallet": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "zelda_mod:rupee_advancement_find_rupee"
+}

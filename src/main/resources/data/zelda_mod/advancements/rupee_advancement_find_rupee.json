@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "zelda_mod:rupee_green"
+    },
+    "title": {
+      "translate": "advancements.rupee_advancement_find_rupee.title"
+    },
+    "description": {
+      "translate": "advancements.rupee_advancement_find_rupee.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "rupee_advancement_find_rupee": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "zelda_mod:zelda_root_advancement"
+}

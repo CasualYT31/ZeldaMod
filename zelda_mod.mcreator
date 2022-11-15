@@ -1,19 +1,792 @@
 {
-  "mod_elements": [],
-  "variable_elements": [],
-  "sound_elements": [],
+  "mod_elements": [
+    {
+      "name": "RupeeCountResetCheck",
+      "type": "procedure",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_count_reset_check",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Rupees/Wallet Elements"
+    },
+    {
+      "name": "RupeeCommand",
+      "type": "command",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_command",
+      "path": "~/Rupees/Commands"
+    },
+    {
+      "name": "RupeeCountDisplay",
+      "type": "procedure",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_count_display",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Rupees/Commands"
+    },
+    {
+      "name": "RupeeCountAdd",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_count_add",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Rupees/Commands"
+    },
+    {
+      "name": "RupeeCountRemove",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_count_remove",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Rupees/Commands"
+    },
+    {
+      "name": "RupeeGreen",
+      "type": "item",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_green",
+      "path": "~/Rupees/Rupees"
+    },
+    {
+      "name": "ZeldaTab",
+      "type": "tab",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zelda_tab"
+    },
+    {
+      "name": "RupeeCheatCommand",
+      "type": "command",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_cheat_command",
+      "path": "~/Rupees/Commands"
+    },
+    {
+      "name": "RupeeLootTable",
+      "type": "loottable",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_loot_table",
+      "path": "~/Rupees/Entity Loot Tables"
+    },
+    {
+      "name": "RupeeEntityDrops",
+      "type": "procedure",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_entity_drops",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Rupees/Entity Loot Tables"
+    },
+    {
+      "name": "RupeeCountSet",
+      "type": "procedure",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_count_set",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Rupees/Commands"
+    },
+    {
+      "name": "RupeeAddRupeeStack",
+      "type": "procedure",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_add_rupee_stack",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Rupees/Wallet Elements"
+    },
+    {
+      "name": "RupeeLootTableRare",
+      "type": "loottable",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_loot_table_rare",
+      "path": "~/Rupees/Entity Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableFriendly",
+      "type": "loottable",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_loot_table_friendly",
+      "path": "~/Rupees/Entity Loot Tables"
+    },
+    {
+      "name": "RupeeBlue",
+      "type": "item",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_blue",
+      "path": "~/Rupees/Rupees"
+    },
+    {
+      "name": "RupeeRed",
+      "type": "item",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_red",
+      "path": "~/Rupees/Rupees"
+    },
+    {
+      "name": "RupeeLootTableTallGrass",
+      "type": "loottable",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_tall_grass",
+      "path": "~/Rupees/Plant Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableGrass",
+      "type": "loottable",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_grass",
+      "path": "~/Rupees/Plant Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableDeadBush",
+      "type": "loottable",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_dead_bush",
+      "path": "~/Rupees/Plant Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableSeagrass",
+      "type": "loottable",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_seagrass",
+      "path": "~/Rupees/Plant Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableTallSeagrass",
+      "type": "loottable",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_tall_seagrass",
+      "path": "~/Rupees/Plant Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableFishingTreasure",
+      "type": "loottable",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_fishing_treasure",
+      "path": "~/Rupees/Fishing Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableBonusChest",
+      "type": "loottable",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_bonus_chest",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableFern",
+      "type": "loottable",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_fern",
+      "path": "~/Rupees/Plant Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableLargeFern",
+      "type": "loottable",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_large_fern",
+      "path": "~/Rupees/Plant Loot Tables"
+    },
+    {
+      "name": "RupeeTag",
+      "type": "tag",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_tag",
+      "path": "~/Rupees/Rupees"
+    },
+    {
+      "name": "RupeeWallet",
+      "type": "item",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_wallet",
+      "path": "~/Rupees/Wallet Elements"
+    },
+    {
+      "name": "RupeeLimitInitialise",
+      "type": "procedure",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_limit_initialise",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Rupees/Wallet Elements"
+    },
+    {
+      "name": "RupeeWalletUpgrade",
+      "type": "item",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_wallet_upgrade",
+      "path": "~/Rupees/Wallet Elements"
+    },
+    {
+      "name": "RupeeLevelSet",
+      "type": "procedure",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_level_set",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Rupees/Commands"
+    },
+    {
+      "name": "RupeeRightClickActions",
+      "type": "procedure",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_right_click_actions",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Rupees/Wallet Elements"
+    },
+    {
+      "name": "RupeeAdvancementFindRupee",
+      "type": "achievement",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_advancement_find_rupee",
+      "path": "~/Rupees/Advancements"
+    },
+    {
+      "name": "ZeldaRootAdvancement",
+      "type": "achievement",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zelda_root_advancement"
+    },
+    {
+      "name": "RupeeAdvancementMaxWallet",
+      "type": "achievement",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_advancement_max_wallet",
+      "path": "~/Rupees/Advancements"
+    },
+    {
+      "name": "RupeeAdvancementRich",
+      "type": "achievement",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_advancement_rich",
+      "path": "~/Rupees/Advancements"
+    },
+    {
+      "name": "RupeeAdvancementChecks",
+      "type": "procedure",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rupee_advancement_checks",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Rupees/Advancements"
+    },
+    {
+      "name": "RupeeLootTableBartering",
+      "type": "loottable",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_bartering",
+      "path": "~/Rupees/Misc Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableMineshaftChest",
+      "type": "loottable",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_mineshaft_chest",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTablePyramidChest",
+      "type": "loottable",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_pyramid_chest",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeOverlay",
+      "type": "overlay",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_overlay",
+      "path": "~/Rupees"
+    },
+    {
+      "name": "ZeldaIcon",
+      "type": "item",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zelda_icon"
+    },
+    {
+      "name": "RupeeLootTableAncientCity",
+      "type": "loottable",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_ancient_city",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableAncientCityIceBox",
+      "type": "loottable",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_ancient_city_ice_box",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableWoodlandMansion",
+      "type": "loottable",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_woodland_mansion",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableStrongholdCorridor",
+      "type": "loottable",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_stronghold_corridor",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableStrongholdCrossing",
+      "type": "loottable",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_stronghold_crossing",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableStrongholdLibrary",
+      "type": "loottable",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_stronghold_library",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableShipwreckTreasure",
+      "type": "loottable",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_shipwreck_treasure",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableJungleTemple",
+      "type": "loottable",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_jungle_temple",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableFortress",
+      "type": "loottable",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_fortress",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableEndCityTreasure",
+      "type": "loottable",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_end_city_treasure",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableBuriedTreasure",
+      "type": "loottable",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_buried_treasure",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableSimpleDungeon",
+      "type": "loottable",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_simple_dungeon",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableBastionTreasure",
+      "type": "loottable",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_bastion_treasure",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableUnderwaterRuinBig",
+      "type": "loottable",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_underwater_ruin_big",
+      "path": "~/Rupees/Chest Loot Tables"
+    },
+    {
+      "name": "RupeeLootTableUnderwaterRuinSmall",
+      "type": "loottable",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rupee_loot_table_underwater_ruin_small",
+      "path": "~/Rupees/Chest Loot Tables"
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "rupee_count",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "rupee_limit",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "99.0"
+    },
+    {
+      "name": "rupees_collected",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    }
+  ],
+  "sound_elements": [
+    {
+      "name": "get_blue_rupee",
+      "files": [
+        "ww_get_rupee_blue"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "get_red_rupee",
+      "files": [
+        "ww_get_rupee_red"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "get_green_rupee",
+      "files": [
+        "ww_get_rupee"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "get_wallet_upgrade",
+      "files": [
+        "get_wallet_upgrade"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    }
+  ],
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "item.zelda_mod.rupee_red": "Red Rupee",
+      "itemGroup.tabzelda_tab": "Zelda Tab",
+      "advancements.rupee_advancement_rich.title": "The 1%",
+      "advancements.zelda_root_advancement.title": "The Legend of Zelda",
+      "advancements.rupee_advancement_find_rupee.title": "Find Rupee",
+      "subtitles.get_red_rupee": "",
+      "advancements.rupee_advancement_max_wallet.title": "Huge Wallet",
+      "item.zelda_mod.zelda_icon": "Zelda Icon",
+      "item.zelda_mod.rupee_blue": "Blue Rupee",
+      "item.zelda_mod.rupee_wallet": "Rupee Wallet",
+      "advancements.rupee_advancement_max_wallet.descr": "Fully upgrade your rupee wallet",
+      "subtitles.get_blue_rupee": "",
+      "subtitles.get_wallet_upgrade": "",
+      "advancements.rupee_advancement_rich.descr": "Collect 50,000 rupees",
+      "subtitles.get_green_rupee": "",
+      "advancements.zelda_root_advancement.descr": "Link\u0027s adventure starts here",
+      "item.zelda_mod.rupee_wallet_upgrade": "Rupee Wallet Upgrade",
+      "subtitles.get_rupee": "Collect a rupee.",
+      "advancements.rupee_advancement_find_rupee.descr": "Find a rupee",
+      "item.zelda_mod.rupee_green": "Green Rupee"
+    }
   },
   "foldersRoot": {
     "name": "~",
-    "children": []
+    "children": [
+      {
+        "name": "Rupees",
+        "children": [
+          {
+            "name": "Commands",
+            "children": []
+          },
+          {
+            "name": "Plant Loot Tables",
+            "children": []
+          },
+          {
+            "name": "Fishing Loot Tables",
+            "children": []
+          },
+          {
+            "name": "Chest Loot Tables",
+            "children": []
+          },
+          {
+            "name": "Wallet Elements",
+            "children": []
+          },
+          {
+            "name": "Entity Loot Tables",
+            "children": []
+          },
+          {
+            "name": "Rupees",
+            "children": []
+          },
+          {
+            "name": "Advancements",
+            "children": []
+          },
+          {
+            "name": "Misc Loot Tables",
+            "children": []
+          }
+        ]
+      }
+    ]
   },
   "workspaceSettings": {
     "modid": "zelda_mod",
     "modName": "Zelda Mod",
     "version": "1.0.0",
-    "author": "Daniel, MCreator",
+    "author": "Casual, MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "Academic Free License v3.0",
     "disableForgeVersionCheck": true,
@@ -22,9 +795,10 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.18.2",
+    "currentGenerator": "forge-1.19.2",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.zeldamod",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200234517
+  "mcreatorVersion": 202200346416
 }

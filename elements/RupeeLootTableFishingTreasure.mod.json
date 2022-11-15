@@ -1,0 +1,10 @@
+{
+  "_fv": 34,
+  "_type": "loottable",
+  "definition": {
+    "type": "Fishing",
+    "pools": [],
+    "name": "gameplay/fishing/treasure",
+    "namespace": "minecraft"
+  }
+}
